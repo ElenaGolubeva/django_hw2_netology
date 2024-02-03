@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Рецепты</title>
+</head>
+
+<body>
+    <div class="list_r">
+    {% for data_one in data %}
+    <a href="/{{ data_one }}">
+        <h3>{{ data_one }}</h3>
+    </a>
+    {% endfor %}
+    </div>
+    <h1>Рецепт блюда: {{ dish }}</h1>
+
+    <div>
+        {% for ingredient, amount in choice_dish.items %}
+        <p>{{ ingredient }}: {{ amount }}</p>
+        {% empty %}
+        <p>Такого рецепта не знаю :</p>
+        {% endfor %}
+
+    </div>
+</body>
+
+</html>
+
+<style>
+    h3 {
+        display: inline;
+        margin-right: 50px;
+        
+    }
+
+    a {
+        text-decoration: none;
+        color: rgb(206, 84, 14);
+        
+    }
+    div {
+        padding-left: 20px;
+    }
+    .list_r{
+        text-align: center;
+    }
+</style>
